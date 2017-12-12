@@ -12,7 +12,7 @@ import static org.fest.assertions.Assertions.assertThat;
  * Created by salekhin on 12.12.2017.
  */
 
-public class FirstTest extends BaseTest {
+public class LoginTests extends BaseTest {
     private LoginPage loginPage;
     private Homepage homepage;
 
@@ -25,6 +25,11 @@ public class FirstTest extends BaseTest {
     @Test
     public void getHome() {
         homepage = loginPage.login();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assertThat(Utils.isElementPresent(homepage.icon)).isTrue();
     }
 }
